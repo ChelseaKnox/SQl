@@ -1,0 +1,28 @@
+-- Create Candle Shop 
+
+CREATE TABLE Candle (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, color TEXT, size INTEGER, lid TEXT, price TEXT);
+
+INSERT INTO Candle VALUES (1, "Banana Nut Bread", 5, "white", 16, "y", "$10");
+INSERT INTO Candle VALUES (2, "Pumpkin Caramel Crunch", 6, "white", 16, "n", "$12");
+INSERT INTO Candle VALUES (3, "Black Sea", 10, "black", 16, "y", "$12");
+INSERT INTO Candle VALUES (4, "Pumpkin", 3, "orange", 8, "n", "$10");
+INSERT INTO Candle VALUES (5, "Critus Agave", 15, "yellow", 16, "n", "$12");
+INSERT INTO Candle VALUES (6, "Cranberry", 8, "red", 16, "y", "$12");
+INSERT INTO Candle VALUES (7, "Lemon Pound Cake", 10, "white", 8, "n", "$10");
+INSERT INTO Candle VALUES (8, "Rose Peta", 11, "pink", 16, "y", "$12");
+INSERT INTO Candle VALUES (9, "Christmas Tree", 6, "green", 16, "y", "$12");
+INSERT INTO Candle VALUES (10, "Berry", 8, "red", 16, "n", "$12");
+INSERT INTO Candle VALUES (11, "Orange", 9, "organge", 16, "y", "$12");
+INSERT INTO Candle VALUES (12, "Mint", 7, "light green", 16, "n", "$12");
+INSERT INTO Candle VALUES (13, "Vanilla", 3, "white", 16, "y", "$12");
+INSERT INTO Candle VALUES (14, "Anber & Driftwood", 9, "red", 16, "y", "$12");
+INSERT INTO Candle VALUES (15, "Sandlewood", 3, "white", 16,"n", "$12");
+
+SELECT * FROM candle;
+
+--Dispaly the database items by price in ascending order
+SELECT * FROM candle
+ORDER BY price ASC;
+
+--Display the database total size of item by price
+SELECT size, SUM(quantity) FROM candle GROUP BY price
